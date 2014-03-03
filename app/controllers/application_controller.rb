@@ -8,4 +8,11 @@ class ApplicationController < ActionController::Base
   	error_messages.each {|k, v| output << "#{k.to_s.capitalize} #{v.join(", ")}."}
   	output
   end
+
+  private
+
+  # Overwriting the sign_out redirect path method
+  def after_sign_out_path_for(resource_or_scope)
+    root_path
+  end
 end
