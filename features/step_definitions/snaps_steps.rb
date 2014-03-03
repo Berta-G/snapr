@@ -7,9 +7,12 @@ Given(/^several snaps exist$/) do
 end
 
 Given(/^I am on the homepage$/) do
-  pending # express the regexp above with the code you wish you had
+  visit "/"
 end
 
 Then(/^I see several snaps$/) do
-  pending # express the regexp above with the code you wish you had
+	Snap.all.each do |snap|
+  expect(page).to have_content(snap.description)
+	expect(page).to have_xpath("//img[@src=\"#{snap.image.url(:medium)}\"]")
+	end
 end

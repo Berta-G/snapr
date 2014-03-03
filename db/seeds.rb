@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+	Dir.glob(File.join(Rails.root, '/tmp/img', '*')).each do |path|
+ 		s = Snap.new(description: "This is #{path}", image: File.open(path)).save!
+ 	end

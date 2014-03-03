@@ -1,1 +1,10 @@
 Hello Snapr!
+
+<ul>
+	<% @snaps.each do |snap| %>
+		<li>
+			<%= image_tag snap.image.url(:medium) %>
+			<%= snap.description %>
+		</li>
+	<% end %>
+</ul>
