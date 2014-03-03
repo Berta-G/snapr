@@ -2,7 +2,7 @@ class SnapsController < ApplicationController
 	before_filter :authenticate_user!, :only => [:new, :create]
 
 	def index
-		@snaps = Snap.all
+		@snaps = Snap.order(created_at: :desc)
 	end
 
   
