@@ -1,0 +1,7 @@
+
+
+<%= form_for @snap, :html => { :multipart => true } do |form| %>
+  <%= form.file_field :image %>
+  <%= form.text_area :description, :placeholder => "Add your description" %>
+  <%= form.submit "Snap!" %>
+<% end %>
