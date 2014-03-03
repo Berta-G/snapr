@@ -10,6 +10,13 @@
 # http://github.com/RailsApps/rails-composer/issues
 #----------------------------------------------------------------------------
 
+
+# images 
+
+/test/img
+/public/system/snaps/images/*
+
+
 # bundler state
 /.bundle
 /vendor/bundle/
