@@ -50,6 +50,8 @@ gem 'unicorn'
 
 gem 'high_voltage' 
 gem 'simple_form' 
+gem 'aws-sdk'
+gem 'foreman'
 
 group :development do
 	gem 'better_errors' 
