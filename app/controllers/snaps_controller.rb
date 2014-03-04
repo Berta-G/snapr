@@ -5,14 +5,13 @@ class SnapsController < ApplicationController
 		@snaps = Snap.order(created_at: :desc)
 	end
 
-  
-
 	def new
 		@snap = Snap.new
 	end
 
 	def create
 		@snap = Snap.new(snap_params)
+		@snap.user_id = current_user.id
 		if @snap.save
 			flash[:notice] = "Snap! Snap! Yum!"
 			redirect_to root_path

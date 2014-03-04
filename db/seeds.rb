@@ -8,5 +8,5 @@
 
 
 	Dir.glob(File.join(Rails.root, '/tmp/img', '*')).each do |path|
- 		s = Snap.new(description: "This is #{path}", image: File.open(path)).save!
+ 		s = Snap.new(description: "This is #{path}", image: File.open(path), user_id: 1).save!
  	end

@@ -4,4 +4,6 @@ class Snap < ActiveRecord::Base
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   validates_presence_of :image, :description
+
+  belongs_to :user
 end

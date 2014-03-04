@@ -59,7 +59,7 @@ end
 
 
 Given(/^a user exists$/) do
-  @user = User.create(email: "test@test.com", password: "12345678", password_confirmation: "12345678")
+  @user = User.create(email: "test@test.com", password: "12345678", password_confirmation: "12345678", username: "test", location: "London")
   expect(User.find_by(email: @user.email)).not_to be_nil
 end
 

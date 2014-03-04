@@ -1,14 +1,7 @@
 Hello Snapr!
 
 <% if @snaps %>
-	<ul>
-		<% @snaps.each do |snap| %>
-			<li>
-				<%= image_tag snap.image.url(:medium) %>
-				<%= snap.description %>
-			</li>
-		<% end %>
-	</ul>
+	<ul><%= render @snaps %></ul>
 <% else %>
 	<p>Oh, snap! No, snaps!</p>
 <% end %> 
