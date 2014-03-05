@@ -48,7 +48,7 @@ $(window).scroll(function()
         url: "/snaps?page="+page_counter,
         success: function(html)
         {
-            if($(html).find('li').length > 0)
+            if($(html).find('li').length > 0 )
             {
                 $('ul').append($(html).find('li'));
                 $('div#loadmoreajaxloader').hide();
