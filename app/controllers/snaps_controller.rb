@@ -1,8 +1,11 @@
+require 'will_paginate'
+
 class SnapsController < ApplicationController
 	before_filter :authenticate_user!, :only => [:new, :create]
 
 	def index
-		@snaps = Snap.order(created_at: :desc)
+		@snaps = Snap.paginate(:page => params[:page], :per_page => 5).order(created_at: :desc, id: :asc)
+
 	end
 
 	def new

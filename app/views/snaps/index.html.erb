@@ -2,9 +2,12 @@ Hello Snapr!
 
 <% if @snaps %>
 	<ul><%= render @snaps %></ul>
+	<%= will_paginate @snaps %>
 <% else %>
 	<p>Oh, snap! No, snaps!</p>
 <% end %> 
+
+<div id="loadmoreajaxloader" style="display: none"><center></center></div>
 
 <script src="http://js.pusher.com/2.1/pusher.min.js" type="text/javascript"></script>
   <script type="text/javascript">
