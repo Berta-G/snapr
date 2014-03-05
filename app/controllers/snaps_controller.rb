@@ -10,11 +10,21 @@ class SnapsController < ApplicationController
 
 	def new
 		@snap = Snap.new
+		@tag = Tag.new
 	end
 
 	def create
+		
+		@tags = tag_params.split(" ").map{|tag| Tag.first_or_create(name: tag)} 
+		
 		@snap = Snap.new(snap_params)
+
+		puts "XX"*35
+		puts snap_params
+		puts tag_params
+		
 		@snap.user_id = current_user.id
+		
 		if @snap.save
 			flash[:notice] = "Snap! Snap! Yum!"
 			push(@snap)
@@ -28,6 +38,10 @@ class SnapsController < ApplicationController
 private
 	def snap_params
 		params.require(:snap).permit(:image, :description)
+	end
+
+	def tag_params
+		params.require(:tag).permit(:name)
 	end
 
 	def push(snap)

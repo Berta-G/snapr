@@ -25,5 +25,11 @@ Scenario: Not allow uploading without login
 	When I log out
 	Then I am not able to snap
 
+Scenario: Show tags
+	When I upload a snap with one tag
+	Then my snap should exist
+	And my tag should exist
+	And I should see my snap with tag
+
 
 
