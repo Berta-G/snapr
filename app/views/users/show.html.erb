@@ -1,0 +1,13 @@
+<h1> profile </h1>
+
+<%= current_user.username%>
+<%= current_user.email%>
+<%= current_user.location%>
+<img src= "<%= current_user.image.url(:medium) %>">
+
+<h2> My snaps </h2>
+<% if @snaps.count > 0 %>
+	<ul><%= render @snaps %></ul>
+<% else %>
+	<p>Oh, snap! You have no snaps!</p>
+<% end %> 
