@@ -1,5 +1,7 @@
 Snapr::Application.configure do
-  
+  Pusher.app_id = '67762'
+  Pusher.key = '45148e84dab1d493390a'
+  Pusher.secret = '60f719600f112cf60799'
 #   config.paperclip_defaults = {
 #   :storage => :s3,
 #   :s3_credentials => {

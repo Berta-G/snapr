@@ -14,6 +14,7 @@ class SnapsController < ApplicationController
 		@snap.user_id = current_user.id
 		if @snap.save
 			flash[:notice] = "Snap! Snap! Yum!"
+			push(@snap)
 			redirect_to root_path
 		else
 			flash[:errors] = format_errors(@snap.errors.messages)
@@ -26,5 +27,10 @@ private
 		params.require(:snap).permit(:image, :description)
 	end
 
+	def push(snap)
+		Pusher.trigger('snaps', 'uploaded', 
+			{src: snap.image.url(:medium), description: snap.description }
+		)
+  end
 
 end

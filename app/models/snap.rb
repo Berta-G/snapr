@@ -5,5 +5,5 @@ class Snap < ActiveRecord::Base
 
   validates_presence_of :image, :description
 
-  belongs_to :user
+  belongs_to :user  
 end

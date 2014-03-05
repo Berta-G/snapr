@@ -5,3 +5,20 @@ Hello Snapr!
 <% else %>
 	<p>Oh, snap! No, snaps!</p>
 <% end %> 
+
+<script src="http://js.pusher.com/2.1/pusher.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    // Enable pusher logging - don't include this in production
+    Pusher.log = function(message) {
+      if (window.console && window.console.log) {
+        window.console.log(message);
+      }
+    };
+
+    var pusher = new Pusher('45148e84dab1d493390a');
+    var channel = pusher.subscribe('snaps');
+    channel.bind('uploaded', function(data) {
+    	$('ul').prepend("<li><img src='"+data.src+"'>"+data.description+"</li>")
+      window.console.log(data.message);
+    });
+  </script>
