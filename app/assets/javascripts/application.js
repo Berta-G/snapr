@@ -15,7 +15,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require inputosaurus
-//= require spinner
+//= require infinite-scroll
 //= require_tree .
 
 
