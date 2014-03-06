@@ -53,6 +53,7 @@ gem 'simple_form'
 gem 'aws-sdk'
 gem 'pusher'
 gem 'will_paginate', '~> 3.0.5'
+gem 'foundation-rails'
 
 group :development do
 	gem 'better_errors' 

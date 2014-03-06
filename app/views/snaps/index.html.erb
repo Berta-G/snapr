@@ -1,7 +1,7 @@
 Hello Snapr!
 
 <% if @snaps %>
-	<ul id="snaps"><%= render @snaps %></ul>
+	<ul class="small-block-grid-1" id="snaps"><%= render @snaps %></ul>
 	<%= will_paginate @snaps %>
 <% else %>
 	<p>Oh, snap! No, snaps!</p>

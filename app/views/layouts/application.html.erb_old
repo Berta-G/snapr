@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Snapr</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+  <%= favicon_link_tag 'favicon.ico' %>
+</head>
+<body>
+
+
+<header>
+	<% if user_signed_in? %>
+		<a href='/snaps/new'> Snap! </a>
+    <a href='/users/<%= current_user.id %>'> My Profile </a>
+		<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+	<% else %>
+		<a href='/users/sign_up'> Sign up! </a> 
+		<a href='/users/sign_in'> Sign in! </a>
+	<% end %>
+
+
+</header>
+
+<div id="flash-container">
+  <% if flash[:notice] %>
+    <div class="flash notice">
+      <%= flash[:notice] %>
+    </div>
+  <% flash[:notice] = nil %>
+  <% end %>
+
+  <% if flash[:alert] %>
+    <div class="flash alert">
+      <%= flash[:alert] %>
+    </div>
+  <% flash[:alert] = nil %>
+  <% end %>
+
+  <% if flash[:errors] && !flash[:errors].empty? %>
+    <ul id="errors">
+      <% flash[:errors].each do |error| %>
+        <li class="flash error"><%= error %></li>
+      <% end %> 
+    </ul>
+  <% end %>
+</div>
+
+<%= yield %>
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+</body>
+</html>

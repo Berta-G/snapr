@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
+//= require foundation
 //= require inputosaurus
 //= require infinite-scroll
 //= require_tree .
@@ -22,3 +23,5 @@
 
 
 
+
+$(function(){ $(document).foundation(); });
