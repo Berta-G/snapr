@@ -6,4 +6,9 @@ class Snap < ActiveRecord::Base
   validates_presence_of :image, :description
 
   belongs_to :user  
+
+  has_many :snaps_tags
+  has_many :tags, through: :snaps_tags
+  accepts_nested_attributes_for :tags
+
 end

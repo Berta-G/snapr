@@ -11,8 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require turbolinks
+//= require inputosaurus
 //= require_tree .
 
 
@@ -61,5 +63,14 @@ $(window).scroll(function()
         });
     }
 });
+
+$('#tags').inputosaurus({
+			width : '350px',
+			allowDuplicates: false,
+			nputDelimiters: [',', ';', " "],
+			change : function(ev){
+				$('#widget1_reflect').val(ev.target.value);
+			}
+		});
 
 
