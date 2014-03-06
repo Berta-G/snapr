@@ -1,9 +1,9 @@
-<h1> profile </h1>
+<h1> Profile </h1>
 
 <%= current_user.username%>
 <%= current_user.email%>
 <%= current_user.location%>
-<img src= "<%= current_user.image.url(:medium) %>">
+<img src= "<%= current_user.image.url(:thumb) %>">
 
 <h2> My snaps </h2>
 <% if @snaps.count > 0 %>

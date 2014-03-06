@@ -1,8 +1,10 @@
-<li>
+<li class="snap" >
 	<%= image_tag snap.image.url(:medium) %>
 	<%= snap.description %>
-	<ul>
-		<%= render snap.tags %>
-	</ul>
+	<% if !snap.tags.empty? %>
+		<ul>
+			<%= render snap.tags %>
+		</ul>
+	<%end%>
 </li>
 		

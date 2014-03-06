@@ -4,8 +4,12 @@ class SnapsController < ApplicationController
 	before_filter :authenticate_user!, :only => [:new, :create]
 
 	def index
+		
 		@snaps = Snap.paginate(:page => params[:page], :per_page => 5).order(created_at: :desc, id: :asc)
-
+	  respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: json_for(@snaps)}
+    end
 	end
 
 	def new
@@ -32,6 +36,13 @@ class SnapsController < ApplicationController
 private
 	def snap_params
 		params.require(:snap).permit(:image, :description)
+	end
+
+	def json_for(snaps)
+		snaps.map do |snap|
+			{id: snap.id, src: snap.image.url(:medium),
+			 description: snap.description, tags: snap.tags}
+		end.to_json
 	end
 
 	def tag_params
