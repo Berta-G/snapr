@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
-//= require turbolinks
 //= require inputosaurus
 //= require infinite-scroll
 //= require_tree .
