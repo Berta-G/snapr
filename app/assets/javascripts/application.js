@@ -16,6 +16,7 @@
 //= require foundation
 //= require inputosaurus
 //= require infinite-scroll
+//= require pusher
 //= require_tree .
 
 
