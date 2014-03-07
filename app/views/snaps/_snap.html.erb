@@ -1,11 +1,13 @@
 <li class="snap row">
-	<article class='medium-6 medium-offset-3 columns panel text-center'>
-		<%= image_tag snap.image.url(:medium), class: 'th' %>
+	<article class='medium-6 medium-offset-3 columns panel radius text-center'>
+		<%= image_tag snap.image.url(:medium), class: 'th radius' %>
 		<blockquote><%= snap.description %></blockquote>
 		<% if !snap.tags.empty? %>
-			<ul>
-				<%= render snap.tags %>
-			</ul>
+			<div class="row">
+				<ul class="small-9 small-centered columns">
+					<%= render snap.tags %>
+				</ul>
+			</div>
 		<%end%>
 	</article>
 </li>

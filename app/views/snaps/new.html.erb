@@ -1,12 +1,16 @@
+<h1>Snap</h1>
+<div class="row">
+	<fieldset class="small-3 small-centered columns">
+		<%= form_for @snap, :html => { :multipart => true } do |form| %>
+		  <%= form.file_field :image %>
+		  <%= form.text_area :description, :placeholder => "Add your description" %>
 
+			<%= form.fields_for @tag do |field| %>
+		        <%= field.text_area :name, :placeholder => "Add your tags"  %>
+			<% end %>
 
-<%= form_for @snap, :html => { :multipart => true } do |form| %>
-  <%= form.file_field :image %>
-  <%= form.text_area :description, :placeholder => "Add your description" %>
+		  <%= form.submit "Snap!", :class => "button tiny radius"  %>
+		<% end %>
+	</fieldset>
+</div>
 
-	<%= form.fields_for @tag do |field| %>
-        <%= field.text_area :name, :placeholder => "Add your tags"  %>
-	<% end %>
-
-  <%= form.submit "Snap!" %>
-<% end %>
