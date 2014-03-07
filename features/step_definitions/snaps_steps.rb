@@ -80,4 +80,13 @@ Then(/^I am not able to snap$/) do
 	expect(page).not_to have_button("Snap!")
 end
 
+Given(/^I visit the snap page$/) do
+  click_link('th radius')
+end
+
+Then(/^I should see the snap$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+
 

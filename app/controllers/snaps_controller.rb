@@ -27,6 +27,10 @@ class SnapsController < ApplicationController
 			redirect_to new_snap_path
 		end
 	end
+
+	def show
+		
+	end
 	
 private
 	def snap_params
