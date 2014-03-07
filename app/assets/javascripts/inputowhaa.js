@@ -1,5 +1,5 @@
 $('#snap_tag_name').inputosaurus({
-			width : '350px',
+			width: '350px',
 			allowDuplicates: false,
 			inputDelimiters: [',', ';', ' '],
 			outputDelimiter: [' '],

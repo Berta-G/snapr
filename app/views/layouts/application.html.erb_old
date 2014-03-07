@@ -23,7 +23,13 @@
 
 </header>
 
-<div id="flash-container">
+
+<div data-alert class="alert-box info radius">
+  This is an info alert with a radius.
+  <a href="#" class="close">&times;</a>
+</div> 
+
+<div id="flash-container" >
   <% if flash[:notice] %>
     <div class="flash notice">
       <%= flash[:notice] %>

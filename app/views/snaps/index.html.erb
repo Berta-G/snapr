@@ -1,8 +1,10 @@
 <% if @snaps %>
-	<ul class="small-block-grid-1" id="snaps"><%= render @snaps %></ul>
-	<%= will_paginate @snaps %>
+	<ul class="no-bullet" id="snaps">
+    <%= render @snaps %>
+  </ul>
+    <%= will_paginate @snaps %>
 <% else %>
-	<p>Oh, snap! No, snaps!</p>
+	<p class='medium-6 medium-offset-3 columns panel radius text-center'>Oh, snap! No, snaps!</p>
 <% end %> 
 
 <script src="http://js.pusher.com/2.1/pusher.min.js" type="text/javascript"></script>

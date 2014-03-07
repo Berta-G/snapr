@@ -1,6 +1,6 @@
 $('#snaps').infinitescroll({
     loading: {
-    finishedMsg: "Snap! No more snaps!",
+    finishedMsg: "<p class='medium-6 medium-offset-3 columns panel radius text-center'>Snap! No more snaps! </p>",
     img: "/assets/animated.gif",
     msg: null,
     msgText: null
@@ -15,5 +15,7 @@ $('#snaps').infinitescroll({
 
 
   });
+
+
 
 

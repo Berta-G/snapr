@@ -1,7 +1,7 @@
 <li class="snap row">
 	<article class='medium-6 medium-offset-3 columns panel radius text-center'>
 		<%= image_tag snap.image.url(:medium), class: 'th radius' %>
-		<blockquote><%= snap.description %></blockquote>
+		<label><%= snap.description %></label>
 		<% if !snap.tags.empty? %>
 			<div class="row">
 				<ul class="small-9 small-centered columns">
