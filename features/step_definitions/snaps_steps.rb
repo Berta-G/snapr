@@ -81,11 +81,12 @@ Then(/^I am not able to snap$/) do
 end
 
 Given(/^I visit the snap page$/) do
-  click_link('th radius')
+  first('article').click_link('snap_link')
 end
 
 Then(/^I should see the snap$/) do
-  pending # express the regexp above with the code you wish you had
+  @snap = Snap.find_by(description: 'Test Description')
+  expect(page).to have_xpath("//img[@src=\"#{@snap.image.url(:medium)}\"]")
 end
 
 

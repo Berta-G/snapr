@@ -12,8 +12,7 @@ class SnapsController < ApplicationController
 		@tag = Tag.new
 	end
 
-	def create
-		
+	def create		
 		@snap = Snap.new(snap_params)
 		@snap.user_id = current_user.id
 
@@ -29,7 +28,7 @@ class SnapsController < ApplicationController
 	end
 
 	def show
-		
+		@snap = Snap.find_by(id: params[:id])
 	end
 	
 private
