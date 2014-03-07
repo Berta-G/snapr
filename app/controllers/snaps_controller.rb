@@ -12,8 +12,7 @@ class SnapsController < ApplicationController
 		@tag = Tag.new
 	end
 
-	def create
-		
+	def create		
 		@snap = Snap.new(snap_params)
 		@snap.user_id = current_user.id
 
@@ -26,6 +25,10 @@ class SnapsController < ApplicationController
 			flash[:errors] = format_errors(@snap.errors.messages)
 			redirect_to new_snap_path
 		end
+	end
+
+	def show
+		@snap = Snap.find_by(id: params[:id])
 	end
 	
 private

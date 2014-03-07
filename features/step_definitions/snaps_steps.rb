@@ -80,4 +80,14 @@ Then(/^I am not able to snap$/) do
 	expect(page).not_to have_button("Snap!")
 end
 
+Given(/^I visit the snap page$/) do
+  first('article').click_link('snap_link')
+end
+
+Then(/^I should see the snap$/) do
+  @snap = Snap.find_by(description: 'Test Description')
+  expect(page).to have_xpath("//img[@src=\"#{@snap.image.url(:medium)}\"]")
+end
+
+
 
