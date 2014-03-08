@@ -54,6 +54,7 @@ gem 'aws-sdk'
 gem 'pusher'
 gem 'will_paginate', '~> 3.0.5'
 gem 'foundation-rails'
+gem 'haml'
 
 group :development do
 	gem 'better_errors' 

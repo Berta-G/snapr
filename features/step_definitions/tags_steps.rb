@@ -34,3 +34,11 @@ end
 Then(/^I should see my snap with tags$/) do
 	@tags.each {|tag| expect(page).to have_content(tag.name)}
 end
+
+Then(/^I visit the tag page$/) do
+  first('article').click_link('tag_link')
+end
+
+Then(/^I should see the tags$/) do
+  pending # express the regexp above with the code you wish you had
+end
