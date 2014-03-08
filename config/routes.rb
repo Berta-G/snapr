@@ -1,8 +1,10 @@
 Snapr::Application.routes.draw do
 
+  get "tags/show"
   devise_for :users
   resources :snaps
   get 'users/:id' => "users#show"
+  get 'tags/:id' => "tags#show"
   root 'snaps#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

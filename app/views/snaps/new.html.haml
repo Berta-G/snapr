@@ -1,0 +1,11 @@
+.row
+	%fieldset.small-6.small-centered.columns
+		= form_for @snap, html: {multipart: true} do |form| 
+			= form.file_field :image 
+			= form.text_area :description, :placeholder => "Add description" 
+			= form.fields_for @tag do |field| 
+				= field.text_area :name, :value => "Add tags"
+			%div
+				= form.submit "Snap!", :class => "button tiny radius"
+		
+
