@@ -36,9 +36,13 @@ Then(/^I should see my snap with tags$/) do
 end
 
 Then(/^I visit the tag page$/) do
-  first('article').click_link('tag_link')
+  @tag  = @tags.first
+  first('article').click_link(@tag.name)
 end
 
-Then(/^I should see the tags$/) do
-  pending # express the regexp above with the code you wish you had
+Then(/^I should see the tag and related pictures$/) do
+  expect(page).to have_content(@tag.name)
+  @tag.snaps.each do |snap| 
+    expect(page).to have_xpath("//img[@src=\"#{snap.image.url(:medium)}\"]")
+  end
 end

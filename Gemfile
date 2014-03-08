@@ -55,6 +55,7 @@ gem 'pusher'
 gem 'will_paginate', '~> 3.0.5'
 gem 'foundation-rails'
 gem 'haml'
+gem "haml-rails"
 
 group :development do
 	gem 'better_errors' 

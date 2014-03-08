@@ -18,11 +18,11 @@
         %td 
           = current_user.location
 .medium-6.medium-offset-3.columns.panel.radius
-	%h1 My snaps
-  - if @snaps.count > 0 
-  	%ul.no-bullet#snaps
-      = render @snaps
-      = will_paginate @snaps
-  - else 
-    .medium-6.medium-offset-3.columns.panel.radius.text-center
-      Oh, snap! You have no snaps!
+  %h1 My snaps
+- if @snaps.count > 0 
+  %ul.no-bullet#snaps
+    = render @snaps
+  = will_paginate @snaps
+- else 
+  .medium-6.medium-offset-3.columns.panel.radius.text-center
+    Oh, snap! You have no snaps!

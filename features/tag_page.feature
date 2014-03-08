@@ -7,5 +7,6 @@ And a user logs in
 And I upload a snap with multiple tags
 
 Scenario: Show snap page
+	Then my tags should exist
 	Then I visit the tag page
-	Then I should see the tags
+	And I should see the tag and related pictures
