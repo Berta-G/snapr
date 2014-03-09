@@ -15,3 +15,4 @@ Then(/^I should see snaps I uploaded$/) do
 		expect(page).to have_xpath("//img[@src=\"#{snap.image.url(:medium)}\"]")
 	end
 end
+

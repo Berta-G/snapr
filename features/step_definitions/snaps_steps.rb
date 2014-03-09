@@ -1,6 +1,6 @@
 Given(/^several snaps exist$/) do
-	Dir.glob(File.join(Rails.root, '/test/img', '*')).each do |path|
- 		s = Snap.new(description: "This is #{path}", image: File.open(path)).save!
+  Dir.glob(File.join(Rails.root, '/test/img', '*')).each do |path|
+ 		Snap.new(description: "This is #{path}", image: File.open(path), user_id: @user.id).save!
  	end
 end
 
@@ -87,6 +87,11 @@ end
 Then(/^I should see the snap$/) do
   @snap = Snap.find_by(description: 'Test Description')
   expect(page).to have_xpath("//img[@src=\"#{@snap.image.url(:medium)}\"]")
+end
+
+Then(/^my snap should have a link to user page$/) do
+  click_link('user_link')
+  expect(page).to have_content(@user.username)
 end
 
 

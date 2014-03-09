@@ -2,7 +2,8 @@
 Feature: Show the snaps on the homepage
 
 Background:
-	Given several snaps exist
+	Given a user exists
+	And several snaps exist
 
 Scenario: Show snaps
 	Given I am on the homepage

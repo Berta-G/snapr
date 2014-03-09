@@ -9,3 +9,4 @@ And I upload a snap
 Scenario: Show snap page
 	Then I visit the snap page
 	Then I should see the snap
+	And my snap should have a link to user page
