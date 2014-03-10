@@ -1,5 +1,6 @@
-%blockquote
-	= comment.comment
-	%cite
-		%a{href: '/users/'+comment.user_id.to_s, id: "comment_user_link"}
-			username
+- if !comment.comment.nil?
+	%blockquote
+		= comment.comment
+		%cite
+			%a{href: '/users/'+comment.user_id.to_s, id: "comment_user_link"}
+				= User.find_by_id(comment.user_id).username
