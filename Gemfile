@@ -56,13 +56,13 @@ gem 'will_paginate', '~> 3.0.5'
 gem 'foundation-rails'
 gem 'haml'
 gem "haml-rails"
+gem 'acts_as_commentable'
 
 group :development do
 	gem 'better_errors' 
 	gem 'quiet_assets' 
 	gem 'rails_layout'
   gem 'foreman'
-
 end
 
 group :test do

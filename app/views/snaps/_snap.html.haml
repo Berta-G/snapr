@@ -10,4 +10,6 @@
 			.row
 				%ul.small-9.small-centered.columns
 					= render snap.tags
+		- if !snap.comments.empty?
+			= render snap.comments
 		

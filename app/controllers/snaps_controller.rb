@@ -29,8 +29,9 @@ class SnapsController < ApplicationController
 
 	def show
 		@snap = Snap.find_by(id: params[:id])
+		@comment = @snap.comments.new
 	end
-	
+
 private
 	def snap_params
 		params.require(:snap).permit(:image, :description)
@@ -57,5 +58,6 @@ private
 		@tags = tag_params["tag"]["name"].downcase.split(" ").map{|tag| Tag.find_or_create_by(name: tag)} 
 		@tags.each{|tag| SnapsTag.where(snap_id: @snap.id, tag_id: tag.id).first_or_create}
   end
+
 
 end

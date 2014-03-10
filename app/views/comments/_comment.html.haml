@@ -1,0 +1,5 @@
+%blockquote
+	= comment.comment
+	%cite
+		%a{href: '/users/'+comment.user_id.to_s, id: "comment_user_link"}
+			username

@@ -11,4 +11,6 @@ class Snap < ActiveRecord::Base
   has_many :tags, through: :snaps_tags
   accepts_nested_attributes_for :tags
 
+  acts_as_commentable
+
 end
