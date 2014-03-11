@@ -105,4 +105,3 @@ config.action_mailer.smtp_settings = {
 end
 
 
-end
