@@ -25,7 +25,7 @@ class ChargesController < ApplicationController
 			redirect_to root_path
 			UserMailer.purchase(current_user, session[:snap_id]).deliver
 		
-		rescue Stripe::CardError => e
+		rescue Exception => e
 		  flash[:error] = e.message
 		  redirect_to root_path
 		end
