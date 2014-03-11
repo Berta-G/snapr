@@ -5,27 +5,28 @@ class ChargesController < ApplicationController
 	end
 
 	def create
-	  # Amount in cents
-	  @amount = 500
+		begin
+		  # Amount in cents
+		  @amount = 500
 
-	  customer = Stripe::Customer.create(
-	    :email => current_user.email,
-	    :card  => params[:stripeToken]
-	  )
+		  customer = Stripe::Customer.create(
+		    :email => current_user.email,
+		    :card  => params[:stripeToken]
+		  )
 
-	  charge = Stripe::Charge.create(
-	    :customer    => customer.id,
-	    :amount      => @amount,
-	    :description => current_user.username+' Rails Stripe customer',
-	    :currency    => 'gbp'
-	  )
+		  charge = Stripe::Charge.create(
+		    :customer    => customer.id,
+		    :amount      => @amount,
+		    :description => current_user.username+' Rails Stripe customer',
+		    :currency    => 'gbp'
+		  )
 
-		flash[:notice] = "Thank you for your purchase"
-		redirect_to root_path
-		UserMailer.purchase(current_user, session[:snap_id]).deliver
-	
-	rescue Stripe::CardError => e
-	  flash[:error] = e.message
-	  redirect_to charges_path
-	end
+			flash[:notice] = "Thank you for your purchase"
+			redirect_to root_path
+			UserMailer.purchase(current_user, session[:snap_id]).deliver
+		
+		rescue Stripe::CardError => e
+		  flash[:error] = e.message
+		  redirect_to root_path
+		end
 end
