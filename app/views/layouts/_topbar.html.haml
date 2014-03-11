@@ -1,0 +1,30 @@
+.contain-to-grid.sticky
+  %nav.top-bar{"data-topbar" => true}
+    %ul.title-area
+      %li.name
+        %h1
+          %a{href: "/"}
+            %img{src: "/assets/logo.png"}
+      %li.toggle-topbar.menu-icon
+        %a{href: "/"}
+          Menu
+    %section.top-bar-section
+      - if user_signed_in?
+        %ul.right
+          %li.active
+            %a{href: "/users/#{current_user.id}"}
+              My Profile 
+          %li
+            = link_to "Sign out", destroy_user_session_path, method: :delete
+        %ul.left
+          %li.active
+            %a{href: '/snaps/new'}
+              Snap! 
+      - else
+        %ul.right
+          %li
+            %a{href: '/users/sign_up'}
+              Sign up! 
+          %li
+            %a{href: '/users/sign_in'}
+              Sign in!

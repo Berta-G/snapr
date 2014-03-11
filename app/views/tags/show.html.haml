@@ -1,0 +1,10 @@
+.medium-6.medium-offset-3.columns.panel.radius
+	%h1 
+		= @tag.name
+- if @snaps.count > 0 
+	%ul.no-bullet#snaps
+		= render @snaps
+	= will_paginate @snaps
+- else 
+	.medium-6.medium-offset-3.columns.panel.radius.text-center
+		Oh, snap! This tag has no snaps!
