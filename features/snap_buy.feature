@@ -11,4 +11,4 @@ Scenario: buy a snap
 	Given I visit the snap page
 	And I buy the snap
 	Then I see a confirmation
-	And I own the snap
+

@@ -6,7 +6,7 @@ class ChargesController < ApplicationController
 
 	def create
 	  # Amount in cents
-	  @amount = 600
+	  @amount = 500
 
 	  customer = Stripe::Customer.create(
 	    :email => current_user.email,
@@ -20,9 +20,10 @@ class ChargesController < ApplicationController
 	    :currency    => 'gbp'
 	  )
 
-	flash[:notice] = "Thank you for your purchase"
-	redirect_to root_path
-
+		flash[:notice] = "Thank you for your purchase"
+		redirect_to root_path
+		UserMailer.purchase(current_user, session[:snap_id]).deliver
+	
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message
 	  redirect_to charges_path

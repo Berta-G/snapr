@@ -19,11 +19,4 @@
 //= require infinite_scroller
 //= require inputowhaa
 
-
-
-
-
-
-
-
 $(function(){ $(document).foundation(); });

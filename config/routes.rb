@@ -1,7 +1,7 @@
 Snapr::Application.routes.draw do
 
   get "tags/show"
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
   resources :snaps
   resources :charges
   get 'users/:id' => "users#show"

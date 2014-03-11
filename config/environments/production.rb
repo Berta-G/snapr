@@ -1,6 +1,7 @@
 Snapr::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+
   config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
@@ -86,4 +87,22 @@ Snapr::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+  config.action_mailer.default_url_options = { :host => 'http://snapr-it.herokuapp.com/' }
+
+config.action_mailer.perform_deliveries = true
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.default_options = {from: 'snapr.love@gmail.com'}
+
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  address:              'smtp.gmail.com',
+  port:                 587,
+  domain:               'gmail.com',
+  user_name:            'snapr.love@gmail.com',
+  password:             ENV['gmailpassword'],
+  authentication:       'plain',
+  enable_starttls_auto: true  }
+end
+
+
 end

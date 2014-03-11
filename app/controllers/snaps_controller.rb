@@ -30,6 +30,7 @@ class SnapsController < ApplicationController
 	def show
 		@snap = Snap.find_by(id: params[:id])
 		@comment = @snap.comments.new
+		session[:snap_id] = @snap.id
 	end
 
 private
