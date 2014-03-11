@@ -16,24 +16,3 @@ channel.bind 'uploaded', (data) ->
 	""")
 	window.console.log "ouch!!!" 
 	window.console.log data 
-
-
-
-
-# // <article class="medium-6 medium-offset-3 columns panel radius text-center">
-# // 		<img alt="Funny cats lol cats sup bro" class="th radius" src="/system/snaps/images/000/000/056/medium/funny_cats_lol_cats_sup_bro.jpg?1394188674">
-# // 		<label>sup kitteh</label>
-# 			<div class="row">
-# 				<ul class="small-9 small-centered columns">
-# // 					<li class="tiny button radius secondary" style="margin: 3px">
-# // 	tags
-# // </li><li class="tiny button radius secondary" style="margin: 3px">
-# // 	sup
-# // </li><li class="tiny button radius secondary" style="margin: 3px">
-# // 	add
-# // </li><li class="tiny button radius secondary" style="margin: 3px">
-# // 	kitteh
-# // </li>
-# // 				</ul>
-# // 			</div>
-# // 	</article>

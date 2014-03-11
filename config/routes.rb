@@ -3,6 +3,7 @@ Snapr::Application.routes.draw do
   get "tags/show"
   devise_for :users
   resources :snaps
+  resources :charges
   get 'users/:id' => "users#show"
   get 'tags/:id' => "tags#show"
   post 'comments' => "comments#create"

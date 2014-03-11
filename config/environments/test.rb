@@ -33,4 +33,7 @@ Snapr::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+
+PUBLISHABLE_KEY="pk_test_lJZQxPeri5h1HdFfsQFAmF6A"
+SECRET_KEY="sk_test_qBbBEUnQKslsImC0R8i63AoF"
 end

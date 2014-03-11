@@ -9,7 +9,7 @@
     .alert-box.info.radius{"data-alert"=> ""}
       = flash[:alert]
       %a.close{href: "#"} &times;
-      - flash[:notice] = nil
+      - flash[:alert] = nil
 
   - if flash[:errors] && !flash[:errors].empty?
     - flash[:errors].each do |error|

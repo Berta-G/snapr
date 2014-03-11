@@ -57,6 +57,7 @@ gem 'foundation-rails'
 gem 'haml'
 gem "haml-rails"
 gem 'acts_as_commentable'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 group :development do
 	gem 'better_errors' 
@@ -71,4 +72,6 @@ group :test do
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
   gem "factory_girl_rails", "~> 4.0"
+  gem 'poltergeist'
+  gem 'selenium-webdriver'
 end
