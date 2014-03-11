@@ -2,6 +2,7 @@ class ChargesController < ApplicationController
 	before_filter :authenticate_user!
 	
 	def new
+		redirect_to root_path
 	end
 
 	def create
