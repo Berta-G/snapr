@@ -19,7 +19,9 @@ class Snap < ActiveRecord::Base
   end
 
   def has_gps?
+    logger.info "EXIFR Begin"
 		!EXIFR::JPEG.new(self.image.path).gps.nil?
+    logger.info "EXIFR End"
   end
   
 end

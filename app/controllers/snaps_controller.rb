@@ -38,13 +38,6 @@ private
 		params.require(:snap).permit(:image, :description)
 	end
 
-	def json_for(snaps)
-		snaps.map do |snap|
-			{id: snap.id, src: snap.image.url(:medium),
-			 description: snap.description, tags: snap.tags}
-		end.to_json
-	end
-
 	def tag_params
 		params.require(:snap).permit(tag: [:name])
 	end
@@ -59,6 +52,5 @@ private
 		@tags = tag_params["tag"]["name"].downcase.split(" ").map{|tag| Tag.find_or_create_by(name: tag)} 
 		@tags.each{|tag| SnapsTag.where(snap_id: @snap.id, tag_id: tag.id).first_or_create}
   end
-
 
 end
