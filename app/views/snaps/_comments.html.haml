@@ -1,0 +1,11 @@
+.row
+	.medium-6.medium-offset-3.columns.panel.radius.text-center
+		= form_for @comment do |form| 
+			= form.text_area :comment, :placeholder => "Share your thoughts"
+			= form.hidden_field :snap_id, :value => @snap.id
+			.text-right
+				= form.submit "Comment", :class => "button tiny radius"
+.row
+	.medium-6.medium-offset-3.columns.panel.radius.text-center
+		%hr
+		= render @snap.comments.reverse

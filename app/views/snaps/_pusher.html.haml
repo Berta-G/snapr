@@ -1,0 +1,19 @@
+= javascript_include_tag "jquery"
+= javascript_include_tag "handlebars"
+= javascript_include_tag "pusher"
+%script{id: 'snap-template', type: 'text/x-handlebars-template'}
+	%li.snap.row
+		%article.medium-6.medium-offset-3.columns.panel.radius.text-center
+			%a{href: '/snaps/{{snap.id}}', id: 'snap_link'}
+				%img.th.radius{src: "{{src}}"}
+			%blockquote
+				{{snap.description}}
+				%cite
+					%a{href: '/users/{{snap.user_id}}', id: "user_link"} 
+						{{username}}
+			.row
+				%ul.small-9.small-centered.columns
+					{{#each tags}}
+					<a href='/tags/{{id}}' id='tag_link'><li class='tiny button radius secondary' style='margin: 3px'>{{name}}</li></a>
+					{{/each}}
+= javascript_include_tag "pusher_local"

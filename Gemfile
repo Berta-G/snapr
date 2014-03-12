@@ -16,8 +16,11 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 gem "paperclip", "~> 4.1"
+gem 'exifr'
+gem 'gmaps4rails'
 
 gem 'devise'
+
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

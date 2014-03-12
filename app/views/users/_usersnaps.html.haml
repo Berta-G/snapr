@@ -1,0 +1,11 @@
+.row
+	.medium-6.medium-offset-3.columns.panel.radius
+		%h3 
+			=@user.username+"'s  snaps"
+- if @snaps.count > 0 
+	%ul.no-bullet#snaps
+		= render @snaps
+	= will_paginate @snaps
+- else 
+	.medium-6.medium-offset-3.columns.panel.radius.text-center
+		Oh, snap! You have no snaps!

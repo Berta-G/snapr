@@ -1,0 +1,21 @@
+.row
+  .medium-6.medium-offset-3.columns.panel.radius
+    %h3 
+      = @user.username+"'s profile"
+    %table
+      %thead
+        %tr
+          %th{width: "150"}Username
+          %th Profile photo
+          %th{width: "150"}Email
+          %th{width: "150"}Location
+      %tbody
+        %tr
+          %td 
+            = @user.username
+          %td
+            %img{center: "", src: "#{ @user.image.url(:thumb)}", style: "border-radius: 100%"}
+          %td
+            = @user.email
+          %td 
+            = @user.location

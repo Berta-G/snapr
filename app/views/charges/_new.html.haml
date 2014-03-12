@@ -1,6 +1,8 @@
-= form_tag charges_path do
-	%article
-		%label.amount
-			%span
-				£5.00
-	%script.stripe-button{:src => "https://checkout.stripe.com/checkout.js", :"data-key" => "#{Rails.configuration.stripe[:publishable_key]}", :"data-description" => "Snappy photo", :"data-amount" => "500", :"data-currency" => 'gbp', :"data-image" => "/assets/payment_logo.png", :"data-name" => "Snapr", :"data-panel-label" => "Place order", :"data-email" => "#{current_user.email}", :"data-label" => "Buy"}
+.row
+	.medium-6.medium-offset-3.columns.panel.radius.text-center
+		= form_tag charges_path do
+			%article
+				%label.amount
+					%span
+						£5.00
+			%script.stripe-button{:src => "https://checkout.stripe.com/checkout.js", :"data-key" => "#{Rails.configuration.stripe[:publishable_key]}", :"data-description" => "Snappy photo", :"data-amount" => "500", :"data-currency" => 'gbp', :"data-image" => "/assets/payment_logo.png", :"data-name" => "Snapr", :"data-panel-label" => "Place order", :"data-email" => "#{current_user.email}", :"data-label" => "Buy"}

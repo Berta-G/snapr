@@ -1,0 +1,11 @@
+.row
+	.medium-6.medium-offset-3.columns.panel.radius.text-center
+		#map.flex-video{style: 'height: 400px;'}
+										
+%script{src: "//maps.google.com/maps/api/js?v=3.13&sensor=false&libraries=geometry", type: "text/javascript"}
+%script{src: '//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js', type: 'text/javascript'}
+
+= javascript_include_tag "jquery"
+= javascript_include_tag "underscore"
+= javascript_include_tag "gmaps/google"
+= javascript_include_tag "googlemap_local"
