@@ -23,9 +23,9 @@ class ChargesController < ApplicationController
 		  )
 
 			flash[:notice] = "Thank you for your purchase"
-			redirect_to root_path
 			UserMailer.purchase(current_user, session[:snap_id]).deliver
-		
+			redirect_to root_path
+
 		rescue Exception => e
 		  flash[:error] = e.message
 		  redirect_to root_path
