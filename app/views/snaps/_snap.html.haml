@@ -4,7 +4,7 @@
 		- image = Rails.env.production? ? snap.image.url(size) : snap.image.path 
 		- begin
 			- if snap.is_mappable
-				= link_to(image_tag(snap.image.url(size), class: 'th radius', :"data-latitude" => EXIFR::JPEG.new(image).gps.to_h[:latitude], :"data-longitude" => EXIFR::JPEG.new(image).gps.to_h[:longitude]), '/snaps/'+snap.id.to_s, id: "snap_link")
+				= link_to(image_tag(snap.image.url(size), class: 'th radius', :"data-latitude" => EXIFR::JPEG.new(open(image)).gps.to_h[:latitude], :"data-longitude" => EXIFR::JPEG.new(open(image)).gps.to_h[:longitude]), '/snaps/'+snap.id.to_s, id: "snap_link")
 			- else
 				= link_to(image_tag(snap.image.url(:medium), class: 'th radius'), '/snaps/'+snap.id.to_s, id: "snap_link")
 		- rescue Exception => e
