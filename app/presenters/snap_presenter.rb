@@ -16,7 +16,7 @@ class SnapPresenter
 
   def has_gps?
     logger.info "EXIFR Begin"
-		!EXIFR::JPEG.new(@snap.image.path).gps.nil?
+		!EXIFR::JPEG.new(image_path).gps.nil?
   end
 
   def image_path
