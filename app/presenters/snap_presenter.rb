@@ -15,8 +15,12 @@ class SnapPresenter
   end
 
   def has_gps?
-    logger.info "EXIFR Begin"
-		!EXIFR::JPEG.new(image_path).gps.nil?
+    logger.info "EXIFR Begin" 
+		!exif_gps.nil?
+  end
+
+  def exif_gps
+  	EXIFR::JPEG.new(open(self.image_path)).gps
   end
 
   def image_path
@@ -24,11 +28,11 @@ class SnapPresenter
   end
 
   def longitude
-  	EXIFR::JPEG.new(open(self.image_path)).gps.to_h[:longitude] 
+  	exif_gps.to_h[:longitude] 
   end
 
   def latitude
-  	EXIFR::JPEG.new(open(self.image_path)).gps.to_h[:latitude]
+  	exif_gps.to_h[:latitude]
   end
 
   def method_missing(method)
