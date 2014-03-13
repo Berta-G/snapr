@@ -20,7 +20,7 @@ class SnapPresenter
   end
 
   def image_path
-		Rails.env.production? ? @snap.image.url(@size) : @snap.image.path
+		Rails.env.production? ? @snap.image.url(@size).split("?").first : @snap.image.path
   end
 
   def longitude
