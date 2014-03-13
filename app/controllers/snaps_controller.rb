@@ -28,7 +28,7 @@ class SnapsController < ApplicationController
 	end
 
 	def show
-		@snap = Snap.find_by(id: params[:id])
+		@snap = SnapPresenter.new(Snap.find_by(id: params[:id]), :large)
 		@comment = @snap.comments.new
 		session[:snap_id] = @snap.id
 	end

@@ -10,18 +10,5 @@ class Snap < ActiveRecord::Base
   accepts_nested_attributes_for :tags
   acts_as_commentable
 
-  def is_mappable
-  	self.tiff_jpeg? && self.has_gps?
-  end
-
-  def tiff_jpeg?
-  	["image/jpeg", "image/tiff"].include?(self.image_content_type)
-  end
-
-  def has_gps?
-    logger.info "EXIFR Begin"
-		!EXIFR::JPEG.new(self.image.path).gps.nil?
-    logger.info "EXIFR End"
-  end
   
 end
