@@ -1,6 +1,6 @@
 -if @snap
 	%ul.no-bullet#snaps
-		= render partial: "snaps/snap", locals: { snap: @snap, size: :large}
+		= render partial: "snaps/show", locals: { snap: @snap, size: :large}
 		- if current_user
 			= render "charges/new"
 			= render "comments"

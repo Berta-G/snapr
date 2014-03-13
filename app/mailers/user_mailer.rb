@@ -10,7 +10,7 @@ class UserMailer < ActionMailer::Base
   def purchase(user, snap_id)
   	@user = user
   	@snap = SnapPresenter.new(Snap.find(snap_id), :original)
-  	attachments[@snap.image_file_name] = File.read(@snap.image_path)
+  	attachments[@snap.image_file_name] = File.read(open(@snap.image_path).path)
     mail(to: @user.email, subject: 'Here is your Snap')
   end
 end
